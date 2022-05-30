@@ -1,0 +1,45 @@
+﻿@page
+@model DogClubWeb.Pages.Dogs.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Dog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dog.Id" />
+            <div class="form-group">
+                <label asp-for="Dog.Name" class="control-label"></label>
+                <input asp-for="Dog.Name" class="form-control" />
+                <span asp-validation-for="Dog.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dog.BirthName" class="control-label"></label>
+                <input asp-for="Dog.BirthName" class="form-control" />
+                <span asp-validation-for="Dog.BirthName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dog.Price" class="control-label"></label>
+                <input asp-for="Dog.Price" class="form-control" />
+                <span asp-validation-for="Dog.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
