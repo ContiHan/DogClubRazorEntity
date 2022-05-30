@@ -5,10 +5,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Dogs overview</h1>
+<h1 class="mb-5">Dogs overview</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-primary" asp-page="Create"><i class="bi bi-plus"></i>Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -27,7 +27,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Dog) {
-        <tr>
+        <tr class="align-middle">
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -38,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-outline-info" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-outline-warning" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-outline-danger" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
